@@ -6,8 +6,8 @@ import fitz
 import time
 from pdf2image import convert_from_bytes
 
-# Configure Tesseract Path
-pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+# Configure Tesseract Path 
+pytesseract.pytesseract.tesseract_cmd = "/workspaces/TessOCR/Tesseract-OCR/tesseract.exe"
 
 # Constants for tesseract
 Segmentation_modes = {"Automatic": 3, "Single Column": 4, "Uniform Block of Text": 6}
