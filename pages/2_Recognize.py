@@ -7,7 +7,7 @@ import time
 from pdf2image import convert_from_bytes
 
 # Configure Tesseract Path
-pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 # Constants for tesseract
 Segmentation_modes = {"Automatic": 3, "Single Column": 4, "Uniform Block of Text": 6}
@@ -53,7 +53,7 @@ def convert_pdf_to_images(pdf_file):
 
 
 def ocr_image(img, lang, engine_mode, segmentation_modes):
-    tess_dir = r"C:\\Users\\EliteBook\\Desktop\\assignment\\TessOCR\\tessdata"
+    tess_dir = r"/workspaces/TessOCR/tessdata"
     config = f'--tessdata-dir {tess_dir} --psm {segmentation_modes} --oem {engine_mode}'
     txt = pytesseract.image_to_string(img, config=config, lang=lang)
     return txt
@@ -61,7 +61,7 @@ def ocr_image(img, lang, engine_mode, segmentation_modes):
 
 def detect_script(img):
     """ function to detect script """
-    tess_dir = r"C:\\Users\\EliteBook\\Desktop\\assignment\\TessOCR\\tessdata"
+    tess_dir = r"/workspaces/TessOCR/tessdata"
     config = f'--tessdata-dir {tess_dir} --psm 0'
     osd = pytesseract.image_to_osd(img, config=config)
     for line in osd.splitlines():
