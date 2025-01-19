@@ -7,7 +7,7 @@ import time
 from pdf2image import convert_from_bytes
 
 # Configure Tesseract Path 
-pytesseract.pytesseract.tesseract_cmd = r"/workspaces/TessOCR/Tesseract-OCR/tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"/usr/bin/tesseract"
 # pytesseract.pytesseract.tesseract_cmd = "tesseract"
 
 # Constants for tesseract
